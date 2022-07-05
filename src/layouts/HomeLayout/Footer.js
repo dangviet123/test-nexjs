@@ -1,9 +1,8 @@
 import React from 'react'
 
-const Footer = () => {
+export default function Footer () {
   return (
-    <div>Footer</div>
+    <div style={{textAlign: 'center'}}>© 2022 - Bản quyền thuộc về PHA NAM</div>
   )
 }
 
-export default Footer;

@@ -6,7 +6,9 @@ const HomeLayout = ({children}) => {
   return (
     <div>
         <Header />
-        {children}
+        <div style={{minHeight: 'calc(100vh - 110px)', maxWidth: 1400, margin: 'auto'}}>
+          {children}
+        </div>
         <Footer />
     </div>
   )

@@ -1,18 +1,27 @@
 
 import { Provider } from 'react-redux';
-import { useStore } from '../src/stores/configureStore';
+import { configureStore } from '../src/stores/configureStore';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../src/themes/theme';
-const App = ({ Component, pageProps }) => {
-  const store = useStore(pageProps.initialReduxState);
+import { CssBaseline } from '@mui/material';
+import { CacheProvider } from '@emotion/react';
+import createEmotionCache from '../src/createEmotionCache';
+
+const clientSideEmotionCache = createEmotionCache();
+export default function App (props) {
+  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   return (
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
+
+    <Provider store={configureStore()}>
+      <CacheProvider value={emotionCache}>
+        <ThemeProvider theme={theme}>
+        <CssBaseline />
+          <Component {...pageProps} />
+          
+        </ThemeProvider>
+      </CacheProvider>
+      
     </Provider>
     
   )
 }
-
-export default App;

@@ -18,7 +18,7 @@ export default function Home({metaKeyword, datas}) {
 }
 
 
-export async function getStaticProps() {
+export async function getServerSideProps(context) {
   const datas = await axios.get('https://eoffice.merapgroup.com/eoffice/api/api/ecommerce/search-product?limit=1000', {headers: {
     'Content-Type': 'application/json',
     'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2VvZmZpY2UubWVyYXBncm91cC5jb20vZW9mZmljZS9hcGkvYXBpL2Vjb21tZXJjZS9hdXRoL2xvZ2luIiwiaWF0IjoxNjU1MTkyMjQ4LCJleHAiOjE2NTc4MjAyNDgsIm5iZiI6MTY1NTE5MjI0OCwianRpIjoieHpjT3Z2OGJhWTlNRWZINiIsInN1YiI6IjI3NTQiLCJwcnYiOiIxZDBhMDIwYWNmNWM0YjZjNDk3OTg5ZGYxYWJmMGZiZDRlOGM4ZDYzIn0.1F-6KZKyzg6UPRuOzvixCMSRIb9bpGiTBxHUnhmV3Ys'

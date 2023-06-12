@@ -31,7 +31,7 @@ export default function Header () {
   return (
     <StyleHeader>
       <div className='main-header'>
-        <div className='title' onClick={() => router.push('/')}>CÔNG TY CỔ PHẦN DƯỢC PHA NAM 1</div>
+        <div className='title' onClick={() => router.push('/')}>CÔNG TY CỔ PHẦN DƯỢC PHA NAM 123</div>
         <div style={{flexGrow: 1}} />
         <div className='cart' onClick={() => router.push('/carts')}>Giỏ hàng</div>
       </div>
